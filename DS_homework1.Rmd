@@ -31,4 +31,28 @@ ggplot(plot_df,aes(x=bill_length_mm,y=flipper_length_mm))+geom_point(aes(color=p
 ggsave("scatterplot of h1.pdf")
 ```
 
+H1_problem2
+```{r}
+df=tibble(
+    norm = rnorm(10),
+    lc=norm>0,
+    charactor= as.character(norm),
+    factor1= as.factor(norm),
+    factor2=c(1,2,3,1,2,3,1,2,3,1),
+    factor4=as.factor(factor2),
+    factor5=factor(c("1","2","3","1","2","3","1","2","3","1"),levels=c("1","2","3"))
+  )
+```
+The mean of norm is `r mean(df$norm)`
+The mean of lc is `r mean(df$lc)`
+The mean of charactor is `r mean(df$charactor)`
+The mean of factor5 is `r mean(df$factor5)`
 
+```{r}
+as.numeric(df$charactor)
+as.numeric(df$factor1)
+```
+
+
+The mean of charactor is `r mean(as.numeric(df$charactor))`.
+The mean of factor5 is `r mean(as.numeric(df$factor5))`.
