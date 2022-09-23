@@ -19,6 +19,17 @@ summary(penguins)
 we can use `r nrow(penguins)` and `r ncol(penguins)` to check out the 
 3.the flipper length is `r mean(penguins$flipper_length_mm, na.rm=TRUE)` mm
 
+part2
+```{r}
+penguins <- na.omit(penguins)
+plot_df=
+  tibble(
+    bill_length_mm = penguins$bill_length_mm,
+    flipper_length_mm = penguins$flipper_length_mm
+  )
+ggplot(plot_df,aes(x=bill_length_mm,y=flipper_length_mm))+geom_point(aes(color=penguins$species))
+ggsave("scatterplot of h1.pdf")
+```
 
 
 
