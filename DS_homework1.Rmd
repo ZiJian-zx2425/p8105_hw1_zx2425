@@ -1,0 +1,24 @@
+---
+title: "Simple document"
+output: html_document
+
+    
+---
+```{r,echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+DS_problem1 part1
+
+```{r}
+data("penguins", package = "palmerpenguins")
+summary(penguins)
+```
+1.the data including species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex year 
+2. the size is 344rows(with one row of NA) 8columns
+we can use `r nrow(penguins)` and `r ncol(penguins)` to check out the 
+3.the flipper length is `r mean(penguins$flipper_length_mm, na.rm=TRUE)` mm
+
+
+
+
